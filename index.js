@@ -1,64 +1,82 @@
 // import packages
 let fs = require("fs");
 let inquirer = require("inquirer");
-let utils = require("utils");
+let generateMarkdown = require("./utils/generateMarkdown");
 
 // array of questions for user
 const questions = [
     {
         type: "input",
-        name: "titleEntry",
+        name: "title",
         message: "Enter a title for the Readme:"
     },
     {
         type: "input",
-        name: "descEntry",
+        name: "description",
         message: "Enter a decription for this project:"
     },
     {
         type: "input",
-        name: "installEntry",
+        name: "installation",
         message: "Enter installation instructions:"
     },
     {
         type: "input",
-        name: "usageEntry",
+        name: "usage",
         message: "Enter usage instructions:"
     },
     {
         type: "input",
-        name: "contribEntry",
+        name: "contribution",
         message: "Enter contribution guidelines:"
     },
     {
         type: "input",
-        name: "testEntry",
+        name: "tests",
         message: "Enter test instructions:"
     },
     {
         type: "list",
-        name: "licenceEntry",
+        name: "licence",
         message: "Choose a licence:",
         choices: ["MIT", "GNU", "Apache"]
     },
     {
         type: "input",
-        name: "githubEntry",
+        name: "github",
         message: "Enter your GitHub username:"
     },
     {
         type: "input",
-        name: "emailEntry",
+        name: "email",
         message: "Enter your email address:"
     }
 ];
 
 // function to write README file
 function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, "utf8", function(){
+        console.log("Success!");
+    });
 }
 
 // function to initialize program
-function init() {
+async function init() {
+    try {
+    //ask questions and store answers
+    let answers = await inquirer.prompt(questions);
+    console.log(answers);
+
+    // generate readme using answers
+    let readmeData = generateMarkdown(answers);
+
+    //write the file
+    writeToFile("readmeOut.md", readmeData);
+
+    }
+    catch (err) {
+        console.error(err);
+    }
 
 }
 

@@ -3,7 +3,8 @@ function generateMarkdown(data) {
   return `# ${data.title}
 
   ## Description
-  ${data.description}\n
+  [!image](./assets/badge-${data.licence}.png)
+  ${data.description}
 
   ## Table of Contents
   - Installation
@@ -11,16 +12,16 @@ function generateMarkdown(data) {
   - Licence
   - Contributing
   - Tests
-  - Questions\n
+  - Questions
 
   ## Installation
-  ${data.installation}\n
+  ${data.installation}
 
   ## Usage
-  ${data.usage}\n
+  ${data.usage}
 
   ## License
-  This project is licenced under the ${data.licence} licence.\n
+  This project is licenced under the ${data.licence} licence.
 
   ## Contributing
   ${data.contribution}

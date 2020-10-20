@@ -1,7 +1,7 @@
 # Test Readme
 
   ## Description
-  [!image](./assets/badge-MIT.png)
+  ![image](./assets/badge-MIT.png)
   This is a test of a readme generator.
 
 

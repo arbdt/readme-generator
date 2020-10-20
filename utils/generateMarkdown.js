@@ -3,7 +3,7 @@ function generateMarkdown(data) {
   return `# ${data.title}
 
   ## Description
-  [!image](./assets/badge-${data.licence}.png)
+  ![license](./assets/badge-${data.licence}.png)
   ${data.description}
 
   ## Table of Contents

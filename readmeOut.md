@@ -1,9 +1,7 @@
 # Test Readme
-
+  ![license badge](https://img.shields.io/badge/license-MIT-blue)
   ## Description
-  ![image](./assets/badge-MIT.png)
-  This is a test of a readme generator.
-
+  This is a test of the readme generator.
 
   ## Table of Contents
   - Installation
@@ -13,24 +11,20 @@
   - Tests
   - Questions
 
-
   ## Installation
-  You must run npm install for the packages.
-
+  First install the NPM packages.
 
   ## Usage
-  Run node index.js
-
+  Run it using Node.
 
   ## License
   This project is licenced under the MIT licence.
 
-
   ## Contributing
-  Please give credit where it is due.
+  Test it first.
 
   ## Tests
-  test
+  Test it by running it.
 
   ## Questions
-  If you have any questions or comments, I may be contacted at [GitHub](https://github.com/arbdt), or by [email](mailto:example@gmail.com).
+  If you have any questions or comments, I may be contacted at [GitHub](https://github.com/example), or by [email](mailto:example@outlook.com).

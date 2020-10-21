@@ -1,7 +1,7 @@
 // import packages
-let fs = require("fs");
-let inquirer = require("inquirer");
-let generateMarkdown = require("./utils/generateMarkdown");
+let fs = require("fs"); //to write to file
+let inquirer = require("inquirer"); // to get user input
+let generateMarkdown = require("./utils/generateMarkdown"); // to make the file content
 
 // array of questions for user
 const questions = [
@@ -13,7 +13,7 @@ const questions = [
     {
         type: "input",
         name: "description",
-        message: "Enter a decription for this project:"
+        message: "Enter a description for this project:"
     },
     {
         type: "input",
@@ -39,7 +39,7 @@ const questions = [
         type: "list",
         name: "licence",
         message: "Choose a licence:",
-        choices: ["MIT", "GPL", "APGL", "Apache"]
+        choices: ["MIT", "GPL", "AGPL", "Apache"]
     },
     {
         type: "input",
@@ -65,13 +65,12 @@ async function init() {
     try {
     //ask questions and store answers
     let answers = await inquirer.prompt(questions);
-    console.log(answers);
-
+    
     // generate readme using answers
     let readmeData = generateMarkdown(answers);
 
     //write the file
-    writeToFile("readmeOut.md", readmeData);
+    writeToFile("READMEout.md", readmeData);
 
     }
     catch (err) {
